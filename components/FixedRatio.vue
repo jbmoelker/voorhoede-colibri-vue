@@ -35,7 +35,10 @@
 
 <script>
   export default {
-    props: ['width', 'height'],
+    props: {
+      height: { type: Number, required: true },
+      width: { type: Number, required: true },
+    },
     computed: {
       ratio: function() { return this.height/this.width * 100 }
     }

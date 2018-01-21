@@ -3,7 +3,17 @@
     <a href='/'>De Voorhoede</a>
     <nav>
       <h2 class="a11y-sr-only">Site menu</h2>
-      ...
+      <ul>
+        <li>
+          <a href="/en/portfolio">
+            <template v-if="language === 'nl'">werk</template>
+            <template v-if="language === 'en'">work</template>
+          </a>
+        </li>
+        <li><a href="/en/blog">blog</a></li>
+        <li><a href="/en/team">team</a></li>
+        <li><a href="/en/contact">contact</a></li>
+    </ul>
     </nav>
   </header>
 </template>
@@ -40,3 +50,16 @@
     display: block;
   }
 </style>
+
+<script>
+  export default {
+    data () {
+      return {
+        languages: ['nl', 'en']
+      }
+    },
+    computed: {
+      language: () => 'en'
+    }
+  }
+</script>

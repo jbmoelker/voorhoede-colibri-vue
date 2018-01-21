@@ -46,7 +46,10 @@
 
   export default {
     components: { ArrowDown, FixedRatio },
-    props: ['title', 'subtitle'],
+    props: {
+      title: { type: String, required: true },
+      subtitle: { type: String, required: true },
+    },
 
     data () {
       return {

@@ -1,0 +1,22 @@
+<template>
+  <img alt="" :src="`${src}?auto=compress&auto=format&fit=crop&h=160&w=160`" class="avatar" />
+</template>
+
+<style>
+  .avatar {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    background-color: currentColor;
+    border-radius: 50%;
+  }
+</style>
+
+<script>
+  export default {
+    props: {
+      src: { type: String, required: true }
+    }
+  }
+</script>

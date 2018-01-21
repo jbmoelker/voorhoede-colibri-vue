@@ -5,23 +5,40 @@
   "author": "{{ author }}",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "run-p dev:*",
+    "dev:app": "nuxt",
+    "dev:api": "nodemon --watch api/server api/server/index.js",
     "build": "nuxt build",
+    "data": "node api/bin/dump-data.js",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "axios": "0.17.1",
+    "datocms-client": "0.3.42",
+    "delay": "2.0.0",
+    "express": "4.16.2",
     "normalize.css": "7.0.0",
-    "nuxt": "^1.0.0"
+    "nuxt": "^1.0.0",
+    "query-string": "5.0.1",
+    "swagger-ui-dist": "3.9.2"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
+    "chalk": "2.3.0",
+    "cheerio": "1.0.0-rc.2",
     "eslint": "^4.15.0",
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-vue": "^4.0.0",
-    "postcss-custom-properties": "6.2.0"
+    "globby": "7.1.1",
+    "marked": "0.3.12",
+    "nodemon": "1.14.11",
+    "npm-run-all": "4.1.2",
+    "postcss-custom-properties": "6.2.0",
+    "prismjs": "1.10.0",
+    "split-html": "1.0.2"
   }
 }
